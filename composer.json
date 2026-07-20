@@ -48,5 +48,8 @@
                 "Batch model delete check": "https://github.com/mpoiriert/SonataDoctrineORMAdminBundle/commit/04f8a0e301bf09a1272b8f9d8535829ca870fb08.patch"
             }
         }
+    },
+    "replace": {
+        "draw/sonata-extra-bundle": "self.version"
     }
 }
