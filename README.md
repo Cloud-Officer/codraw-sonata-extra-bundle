@@ -1,5 +1,4 @@
-DrawSonataExtraBundle
-====================
+# DrawSonataExtraBundle
 
 This bundle adds some functionalities to the [Sonata Project](https://sonata-project.org/) different bundle.
 
@@ -37,7 +36,8 @@ you have defined the arguments from any other mean prior to the compiler pass th
 When a menu just have one submenu it can be fix to remove the submenu.
 
 This:
-```
+
+```text
 User
  --> List
 Entity
@@ -48,7 +48,8 @@ Section
 ```
 
 Would become:
-```
+
+```text
 User
 Entity
 Section
@@ -57,6 +58,7 @@ Section
 ```
 
 Enable this feature in config:
+
 ```YAML
 draw_sonata_extra:
   fix_menu_depth: true
@@ -66,7 +68,7 @@ draw_sonata_extra:
 
 Some templates type are added to the default Sonata templates.
 
-By default, all the js and css files are added to the `sonata_admin.assets.extra_javascripts` 
+By default, all the js and css files are added to the `sonata_admin.assets.extra_javascripts`
 and `sonata_admin.assets.extra_stylesheets section.
 
 If you want to install them manually you can set the `draw_sonata_extra.install_assets` to false.

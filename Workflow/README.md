@@ -1,5 +1,4 @@
-Introduction
-------------
+## Introduction
 
 This library add Symfony Workflow component integration within Sonata Admin.
 
@@ -10,8 +9,7 @@ It's base on [Yokai Sonata Workflow](https://github.com/yokai-php/sonata-workflo
 - add a menu dropdown to your admin detail pages on which you have buttons to apply available transitions
 - ship a controller to apply transition
 
-Configuration
--------------
+## Configuration
 
 Let say that you have an entity named `PullRequest` that is under workflow and for which you have an admin.
 
