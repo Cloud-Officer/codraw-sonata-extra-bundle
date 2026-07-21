@@ -1,5 +1,5 @@
 {
-    "name": "draw/sonata-extra-bundle",
+    "name": "codraw/sonata-extra-bundle",
     "description": "",
     "license": "MIT",
     "type": "symfony-bundle",
@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=8.5",
-        "draw/dependency-injection": "^0.39",
+        "codraw/dependency-injection": "^0.39",
         "symfony/browser-kit": "^6.4.0",
         "symfony/framework-bundle": "^6.4.0",
         "symfony/expression-language": "^6.4.0",
@@ -17,8 +17,8 @@
     },
     "require-dev": {
         "cweagans/composer-patches": "^1.7",
-        "draw/tester": "^0.39",
-        "draw/security": "^0.39",
+        "codraw/tester": "^0.39",
+        "codraw/security": "^0.39",
         "phpunit/phpunit": "^11.3 || ^12.0",
         "sonata-project/admin-bundle": "^4.8",
         "sonata-project/doctrine-orm-admin-bundle": "^4.2",
@@ -48,5 +48,8 @@
                 "Batch model delete check": "https://github.com/mpoiriert/SonataDoctrineORMAdminBundle/commit/04f8a0e301bf09a1272b8f9d8535829ca870fb08.patch"
             }
         }
+    },
+    "replace": {
+        "draw/sonata-extra-bundle": "self.version"
     }
 }
