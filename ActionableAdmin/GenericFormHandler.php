@@ -29,7 +29,11 @@ class GenericFormHandler
     ): ?Response {
         $executions = \is_callable($executions) ? ['execution' => $executions] : $executions;
 
-        $previousExecution = $executions['execution'];
+        $previousExecution = $executions['execution'] ?? null;
+
+        if (!\is_callable($previousExecution)) {
+            throw new \InvalidArgumentException('The execution is not callable.');
+        }
 
         $executions['execution'] = static fn (object $object): mixed => $previousExecution($object, $objectActionExecutioner->options['form.data']);
 

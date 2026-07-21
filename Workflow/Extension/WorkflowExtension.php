@@ -195,7 +195,7 @@ class WorkflowExtension extends AbstractAdminExtension implements ActionableAdmi
         $adminAction = new $actionClass();
 
         if (!$adminAction instanceof AdminAction) {
-            throw new \LogicException(\sprintf('The action class "%s" must implement "%s".', $this->options['action_class'], AdminAction::class));
+            throw new \LogicException(\sprintf('The action class "%s" must implement "%s".', $this->options['admin_action_class'], AdminAction::class));
         }
 
         $adminAction->setController($this->options['controller']);

@@ -70,7 +70,6 @@ class ObjectActionExecutioner
 
         $this->target->select('o.id as id');
 
-        $this->admin->getModelManager();
         foreach ($this->target->execute() as $id) {
             $object = $this->admin->getObject($id['id']);
 
@@ -168,6 +167,12 @@ class ObjectActionExecutioner
 
         foreach ($this->getObjects() as $object) {
             ++$this->processedCount;
+
+            if (null === $object) {
+                $this->skip('not-found');
+
+                continue;
+            }
 
             try {
                 $this->eventDispatcher->dispatch($event = new ExecutionEvent($object, $this));

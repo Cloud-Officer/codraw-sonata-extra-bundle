@@ -101,7 +101,7 @@ class ExecutionNotifier implements ResetInterface
                         $objectActionExecutioner->getAction()
                     ),
                     '%object%' => $this->escapeHtml($admin->toString($object)),
-                    '%error%' => $throwable->getMessage(),
+                    '%error%' => $this->escapeHtml($throwable->getMessage()),
                 ],
                 'DrawSonataExtraBundle'
             )

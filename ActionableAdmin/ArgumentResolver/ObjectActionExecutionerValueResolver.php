@@ -37,7 +37,7 @@ class ObjectActionExecutionerValueResolver implements ValueResolverInterface
         }
 
         if ($admin->hasSubject()) {
-            $action = $request->attributes->get('_actionableAdmin')['action'];
+            $action = $request->attributes->get('_actionableAdmin')['action'] ?? null;
 
             if (null === $action) {
                 return [];

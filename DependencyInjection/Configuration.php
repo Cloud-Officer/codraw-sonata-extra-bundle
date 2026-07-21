@@ -167,7 +167,7 @@ class Configuration implements ConfigurationInterface
                                     'field_name' => $name,
                                     'priority' => $configuration,
                                 ];
-                            } if (!isset($configuration['field_name'])) {
+                            } elseif (!isset($configuration['field_name'])) {
                                 $config[$name]['field_name'] = $name;
                             }
                         }

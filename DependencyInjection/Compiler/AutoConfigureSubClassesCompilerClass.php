@@ -18,6 +18,8 @@ class AutoConfigureSubClassesCompilerClass implements CompilerPassInterface
                 $subClasses[$tag['position'] ?? 0][$tag['label']] = $tag['sub_class'];
             }
 
+            ksort($subClasses);
+
             $subClasses = array_merge(...$subClasses);
 
             $container

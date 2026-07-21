@@ -128,7 +128,7 @@ class AdminAction
         return $this;
     }
 
-    public function getController(): string
+    public function getController(): ?string
     {
         return $this->controller;
     }

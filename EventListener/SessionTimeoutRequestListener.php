@@ -96,20 +96,21 @@ class SessionTimeoutRequestListener implements EventSubscriberInterface
             return;
         }
 
-        $content = str_replace(
-            '<title>',
+        $content = substr_replace(
+            $content,
             \sprintf(
                 '
   <script type="text/javascript">
     const sessionHandler = new SessionExpirationHandler(%s,"%s","%s");
   </script>
 
-  <title>',
+  ',
                 $this->delay,
                 $this->urlGenerator->generate('keep_alive'),
                 $this->urlGenerator->generate('admin_login')
             ),
-            $content
+            strpos($content, '<title>'),
+            0
         );
 
         $response->setContent($content);

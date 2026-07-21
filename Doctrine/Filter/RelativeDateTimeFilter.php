@@ -40,7 +40,13 @@ class RelativeDateTimeFilter extends Filter
                 break;
         }
 
-        $inputValue = date('Y-m-d H:i:s', strtotime($value));
+        $timestamp = strtotime($value);
+
+        if (false === $timestamp) {
+            return;
+        }
+
+        $inputValue = date('Y-m-d H:i:s', $timestamp);
         $parameterName = $this->getNewParameterName($query);
         $completeField = \sprintf('%s.%s', $alias, $field);
         $this->applyWhere(

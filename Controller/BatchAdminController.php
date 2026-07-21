@@ -103,10 +103,16 @@ class BatchAdminController extends AbstractAdminController
         }
 
         try {
-            $forwardedRequest->request->add(json_decode($encodedData, true, 512, \JSON_THROW_ON_ERROR));
+            $data = json_decode($encodedData, true, 512, \JSON_THROW_ON_ERROR);
         } catch (\JsonException) {
             throw new BadRequestHttpException('Unable to decode batch data');
         }
+
+        if (!\is_array($data)) {
+            throw new BadRequestHttpException('Unable to decode batch data');
+        }
+
+        $forwardedRequest->request->add($data);
 
         return $forwardedRequest;
     }
